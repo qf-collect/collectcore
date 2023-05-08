@@ -21,7 +21,6 @@ maven:
    24  ls -lrt
    25  history
 
-
 Jenkins:
    1  javac
     2  sudo apt update
