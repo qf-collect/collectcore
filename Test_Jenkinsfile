@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('prep') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/qf-collect/collectcore.git'
+            }
+        }
+        stage('build') {
+            steps {
+              sh 'mvn -f pom.xml clean package'
+            }
+            post {
+                success {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'going to strat deploy soon'
+            }
+        }
+        stage('testing') {
+            steps {
+                echo 'can be deon once deploy task completed'
+            }
+        }
+    }
+}
