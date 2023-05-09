@@ -72,4 +72,20 @@
       </plugins>
     </pluginManagement>
   </build>
+  <distributionManagement>
+  <repository>
+    <uniqueVersion>false</uniqueVersion>
+    <id>collect-releases</id>
+    <name>collect-releases</name>
+    <url>http://52.66.251.189:8081/repository/collect-releases/</url>
+    <layout>default</layout>
+  </repository>
+  <snapshotRepository>
+    <uniqueVersion>true</uniqueVersion>
+    <id>collect-snapshots</id>
+    <name>collect-snapshots</name>
+    <url>http://52.66.251.189:8081/repository/collect-snapshots/</url>
+    <layout>legacy</layout>
+  </snapshotRepository>
+</distributionManagement>
 </project>
