@@ -31,3 +31,9 @@ Jenkins:
     7  sudo apt-get install jenkins
     8  systemctl status jenkins
     9  history
+
+nexus:
+   apt update
+   apt install docker.io 
+   docker run -d -p 8081:8081 --name nexus sonatype/nexus3
+   docker ps
