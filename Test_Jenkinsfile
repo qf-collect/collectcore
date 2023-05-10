@@ -18,7 +18,9 @@ pipeline {
                 success {
                     junit '**/target/surefire-reports/TEST-*.xml'
                     archiveArtifacts 'target/*.jar'
+                  //  slackSend channel: 'testchannel', message: 'build completed successfully'
                 }
+                
             }
         }
         stage('deploy') {
